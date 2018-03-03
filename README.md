@@ -82,6 +82,16 @@ ctest -V    # verbose
 ctest -V    # Extra verbose
 ```
 
+## Building installer
+After performing a successful build,
+```sh
+cd _builds
+cpack --config CPackConfig.cmake        # Create binary distribution
+cpack --config CPackSourceConfig.cmake  # Create Source distribution
+```
+
+
+
 ## Reference
 - https://cmake.org/cmake-tutorial/
 - https://cgold.readthedocs.io/en/latest/index.html

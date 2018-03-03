@@ -2,6 +2,7 @@ cmake_minimum_required (VERSION 3.9.1)
 project (justDoIt)
 message("Using CMake version ${CMAKE_VERSION}")
 include(CTest)
+set (CTEST_PROJECT_NAME "justDoIt")
 
 # The version number.
 set (justDoIt_VERSION_MAJOR 1)
@@ -75,3 +76,12 @@ do_test (7 "7 is 2.645")
 do_test (25 "25 is 5")
 do_test (-25 "-25 is -nan")
 do_test (0.0001 "0.0001 is 0.01")
+
+
+# build a CPack driven installer package
+include (InstallRequiredSystemLibraries)
+set (CPACK_RESOURCE_FILE_LICENSE
+     "${CMAKE_CURRENT_SOURCE_DIR}/COPYING")
+set (CPACK_PACKAGE_VERSION_MAJOR "${justDoIt_VERSION_MAJOR}")
+set (CPACK_PACKAGE_VERSION_MINOR "${justDoIt_VERSION_MINOR}")
+include (CPack)
