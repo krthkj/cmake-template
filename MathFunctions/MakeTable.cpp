@@ -2,7 +2,8 @@
 #include <cmath>
 
 #include <fstream>
-
+#include <cstdlib>
+using namespace std;
 int main (int argc, char *argv[]){
 
     if (argc<2){
@@ -10,7 +11,7 @@ int main (int argc, char *argv[]){
     }
 
     // create a source file with a table of square roots
-    std::ofstream fout;
+    ofstream fout;
     fout.open(argv[1]);
     if (!fout.is_open()){
         return 1;
