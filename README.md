@@ -1,4 +1,7 @@
 # justDoIt
+[![travis][travis-img]](https://travis-ci.org/krthkj/cmake-template)
+
+[travis-img]: https://img.shields.io/travis/krthkj/cmake-template/master.svg?label=Linux+Build
 
 sample project for using cmake
 
@@ -82,3 +85,4 @@ ctest -V    # Extra verbose
 ## Reference
 - https://cmake.org/cmake-tutorial/
 - https://cgold.readthedocs.io/en/latest/index.html
+- https://cmake.org/Wiki/CMake/Testing_With_CTest
