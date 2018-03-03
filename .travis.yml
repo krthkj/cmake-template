@@ -15,5 +15,5 @@ before_script:
 
 script:
   - cmake --build _builds
-  - cd _builbs
+  - cd _builds
   - ctest
