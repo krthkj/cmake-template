@@ -7,6 +7,7 @@
 #endif
 
 #include <iostream>
+#include <cstdlib>
 
 int main (int argc, char *argv[]){
     std::cout<< argv[0]<<" version is "<<justDoIt_VERSION_MAJOR<<"."<<justDoIt_VERSION_MINOR<<std::endl;
