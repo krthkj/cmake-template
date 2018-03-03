@@ -1,5 +1,5 @@
 language: cpp
-
+os: linux
 dist: xenial
 
 compiler:
@@ -7,7 +7,11 @@ compiler:
 
 before_install:
   - sudo apt-get update -qq
-  - sudo apt-get install -qq build-essential cmake git-core lcov ggcov g++
+  - sudo apt-get install -qq git-core
+  - sudo apt-get install -qq build-essential
+  - sudo apt-get install -qq cmake
+  - sudo apt-get install -qq g++ gcc
+  - sudo apt-get install -qq lcov ggcov
   - sudo apt-get install libboost-all-dev
 
 before_script:
