@@ -90,8 +90,6 @@ cpack --config CPackConfig.cmake        # Create binary distribution
 cpack --config CPackSourceConfig.cmake  # Create Source distribution
 ```
 
-
-
 ## Reference
 - https://cmake.org/cmake-tutorial/
 - https://cgold.readthedocs.io/en/latest/index.html
