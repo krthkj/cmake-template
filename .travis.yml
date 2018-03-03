@@ -5,7 +5,6 @@ dist: xenial
 compiler:
   - g++
 
-
 before_script:
   - cmake -H. -B_builds
 
