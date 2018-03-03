@@ -1,6 +1,7 @@
 cmake_minimum_required (VERSION 3.9.1)
 project (justDoIt)
 message("Using CMake version ${CMAKE_VERSION}")
+include(CTest)
 
 # The version number.
 set (justDoIt_VERSION_MAJOR 1)
@@ -35,11 +36,33 @@ target_link_libraries (justDoIt  ${EXTRA_LIBS})
 
 message("Processing CMakeLists.txt")
 
-# Testing
-enable_testing()
-add_test(No_arguments justDoIt )
-add_test(Zero justDoIt 0)
-add_test(One justDoIt 1)
-add_test(Square_No justDoIt 36)
-add_test(Non_square_No justDoIt 37)
-add_test(Large_number justDoIt 99999999999999999)
+# add the install targets
+install (TARGETS justDoIt DESTINATION bin)
+install (FILES "${PROJECT_BINARY_DIR}/config.h"
+         DESTINATION include)
+
+## TESTING
+# does the usage message work?
+add_test (ItRunsUsage justDoIt)
+set_tests_properties (ItRunsUsage PROPERTIES PASS_REGULAR_EXPRESSION "Usage:.*number")
+
+
+#define a macro to simplify adding tests
+macro (do_test arg result)
+  add_test (itRunsComp${arg} justDoIt ${arg})
+  set_tests_properties (itRunsComp${arg}
+    PROPERTIES PASS_REGULAR_EXPRESSION ${result}
+    )
+endmacro (do_test)
+
+# do a bunch of result based tests
+do_test (0 "0 is 0")
+do_test (1 "1 is 1")
+do_test (3 "3 is 1.73205")
+do_test (4 "4 is 2")
+do_test (9 "9 is 3")
+do_test (5 "5 is 2.236")
+do_test (7 "7 is 2.645")
+do_test (25 "25 is 5")
+do_test (-25 "-25 is -nan")
+do_test (0.0001 "0.0001 is 0.01")

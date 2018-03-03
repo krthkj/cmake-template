@@ -16,6 +16,7 @@ int main (int argc, char *argv[]){
     }
     else{
         double inVal = atof(argv[1]);
+        // if (inVal<0) inVal*=-1;
 #ifdef USE_MYMATH
         double outVal = mysqrt(inVal);
         std::cout<< "Using myMath"<<std::endl;
