@@ -2,7 +2,7 @@
 
 sample project for using cmake
 
-## How-To generate Makefile, examples (out-of-source)
+### How-To generate Makefile, examples (out-of-source)
 
 Simple:
 ```sh
@@ -33,7 +33,7 @@ cmake -H. -B_builds/osx -G Xcode
 cmake -H. -B_builds/ios -G Xcode -DCMAKE_TOOLCHAIN_FILE=/.../ios.cmake
 ```
 
-## Build instructions/command
+### Build instructions/command
 Simple:
 ```sh
 cmake --build _builds
@@ -63,7 +63,7 @@ cmake --build _builds/osx
 cmake --build _builds/ios
 ```
 
-## Testing
+### Testing
 Test commands are placed the parent `CMakeFile.txt` file.
 example:
 ```txt
@@ -79,5 +79,6 @@ ctest -V    # verbose
 ctest -V    # Extra verbose
 ```
 
-## Reference
+### Reference
+- https://cmake.org/cmake-tutorial/
 - https://cgold.readthedocs.io/en/latest/index.html
