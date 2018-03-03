@@ -58,7 +58,7 @@ endmacro (do_test)
 # do a bunch of result based tests
 do_test (0 "0 is 0")
 do_test (1 "1 is 1")
-do_test (2 "1 is 1.4")
+do_test (2 "2 is 1.41421")
 do_test (3 "3 is 1.73205")
 do_test (4 "4 is 2")
 do_test (9 "9 is 3")
