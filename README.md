@@ -61,4 +61,7 @@ Platforms:
 ```sh
 cmake --build _builds/osx
 cmake --build _builds/ios
-``
+```
+
+# Reference
+- https://cgold.readthedocs.io/en/latest/index.html
