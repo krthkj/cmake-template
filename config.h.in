@@ -1,0 +1,7 @@
+#ifndef justDoIt_VERSION_MAJOR
+#define  justDoIt_VERSION_MAJOR @justDoIt_VERSION_MAJOR@
+#endif
+
+#ifndef justDoIt_VERSION_MINOR
+#define  justDoIt_VERSION_MINOR @justDoIt_VERSION_MINOR@
+#endif
