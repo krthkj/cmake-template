@@ -37,7 +37,7 @@ message("Processing CMakeLists.txt")
 
 # Testing
 enable_testing()
-add_test(DEFAULT justDoIt )
+add_test(No_arguments justDoIt )
 add_test(sample justDoIt 1)
 add_test(2 justDoIt 2)
 add_test(Three justDoIt 3)
