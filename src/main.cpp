@@ -48,14 +48,17 @@ std::cout<<"no printf"<<std::endl;
         std::cout<< "HAVE_MEMSET Enable"<< std::endl;
 #endif
 #ifdef USE_MYMATH
-
         std::cout<< "MyMAth Enable"<< std::endl;
+#endif
+#ifdef USE_MYMATH
         double outVal = mysqrt(inVal);
 #else
         double outVal = sqrt(inVal);
 #endif
 
         std::cout<<"The square root of "<< inVal<< " is "<<outVal <<std::endl;
+
+
     }
     return 0;
 }

@@ -8,7 +8,7 @@ set (justDoIt_VERSION_MAJOR 1)
 set (justDoIt_VERSION_MINOR 0)
 
 # does this system provide the log and exp functions?
-include (CheckFunctionExists)
+include (${CMAKE_ROOT}/Modules/CheckFunctionExists.cmake)
 check_function_exists (log HAVE_LOG)
 check_function_exists (exp HAVE_EXP)
 check_function_exists( printf HAVE_PRINTF )
@@ -50,7 +50,9 @@ install (FILES "${PROJECT_BINARY_DIR}/config.h"
 ## TESTING
 # does the usage message work?
 add_test (ItRunsUsage justDoIt)
-set_tests_properties (ItRunsUsage PROPERTIES PASS_REGULAR_EXPRESSION "Usage:.*number")
+set_tests_properties (ItRunsUsage
+    PROPERTIES
+    PASS_REGULAR_EXPRESSION "Usage:.*number")
 
 
 #define a macro to simplify adding tests
