@@ -2,7 +2,7 @@
 
 sample project for using cmake
 
-# How-To generate Makefile, examples (out-of-source)
+## How-To generate Makefile, examples (out-of-source)
 
 Simple:
 ```sh
@@ -33,7 +33,7 @@ cmake -H. -B_builds/osx -G Xcode
 cmake -H. -B_builds/ios -G Xcode -DCMAKE_TOOLCHAIN_FILE=/.../ios.cmake
 ```
 
-# Build instructions/command
+## Build instructions/command
 Simple:
 ```sh
 cmake --build _builds
@@ -63,5 +63,5 @@ cmake --build _builds/osx
 cmake --build _builds/ios
 ```
 
-# Reference
+## Reference
 - https://cgold.readthedocs.io/en/latest/index.html
