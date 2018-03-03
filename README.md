@@ -63,5 +63,21 @@ cmake --build _builds/osx
 cmake --build _builds/ios
 ```
 
+## Testing
+Test commands are placed the parent `CMakeFile.txt` file.
+example:
+```txt
+add_test( testname Exename arg1 arg2 ... )
+add_test(Square_No justDoIt 36)
+```
+
+To perform testing,
+```sh
+cd _builds
+ctest       # minimal verbose level
+ctest -V    # verbose
+ctest -V    # Extra verbose
+```
+
 ## Reference
 - https://cgold.readthedocs.io/en/latest/index.html
