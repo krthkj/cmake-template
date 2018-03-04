@@ -1,14 +1,29 @@
 language: cpp
+
 os: linux
 dist: xenial
+sudo: require
+addons:
+  apt:
+    sources:
+      - ubuntu-toolchain-r-test
+    packages:
+      - gcc-7
+      - g++-7
+      - cmake
 
 compiler:
   - g++
 
 before_script:
-  - cmake -H. -B_builds
+  - sudo ln -s /usr/bin/gcc-6 /usr/local/bin/gcc
+  - sudo ln -s /usr/bin/g++-6 /usr/local/bin/g++
+  - gcc -v && g++ -v && cmake --version
 
 script:
+  - cmake -H. -B_builds
   - cmake --build _builds
   - cd _builds
   - ctest
+
+

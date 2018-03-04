@@ -38,19 +38,22 @@ if (USE_MYMATH)
 endif (USE_MYMATH)
 
 # add the executable
-add_executable(justDoIt src/main.cpp)
-target_link_libraries (justDoIt  ${EXTRA_LIBS})
+add_executable(${PROJECT_NAME} src/main.cpp)
+target_compile_features(${PROJECT_NAME} PUBLIC cxx_std_17)
+set_target_properties(${PROJECT_NAME} PROPERTIES CXX_EXTENSIONS OFF)
+target_link_libraries (${PROJECT_NAME} stdc++fs)
+target_link_libraries (${PROJECT_NAME} ${EXTRA_LIBS})
 
 message("Processing CMakeLists.txt")
 
 # add the install targets
-install (TARGETS justDoIt DESTINATION bin)
+install (TARGETS ${PROJECT_NAME} DESTINATION bin)
 install (FILES "${PROJECT_BINARY_DIR}/config.h"
          DESTINATION include)
 
 ## TESTING
 # does the usage message work?
-add_test (ItRunsUsage justDoIt)
+add_test (ItRunsUsage ${PROJECT_NAME})
 set_tests_properties (ItRunsUsage
     PROPERTIES
     PASS_REGULAR_EXPRESSION "Usage:.*number")
@@ -58,7 +61,7 @@ set_tests_properties (ItRunsUsage
 
 #define a macro to simplify adding tests
 macro (do_test arg result)
-  add_test (itRunsComp${arg} justDoIt ${arg})
+  add_test (itRunsComp${arg} ${PROJECT_NAME} ${arg})
   set_tests_properties (itRunsComp${arg}
     PROPERTIES PASS_REGULAR_EXPRESSION ${result}
     )
