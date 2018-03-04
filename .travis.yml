@@ -7,6 +7,18 @@ sudo: required
 compiler:
   - g++
 
+addons:
+  apt:
+    sources:
+      - ubuntu-toolchain-r-test
+    packages:
+      - g++-7
+
+before_script:
+  - g++ --version
+  - gcc --version
+  - cmake --version
+
 script:
   - cmake -H. -B_builds
   - cmake --build _builds
